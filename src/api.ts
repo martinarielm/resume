@@ -1,11 +1,17 @@
-const jobs = [
+import { Job } from "./types/Job";
+
+const jobs: Job[] = [
   {
+    id: 1,
     company: "PlatformX Solutions",
+    position: "Frontend Developer",
     dates: ["nov. 2023", "actualidad"],
     features: [],
   },
   {
+    id: 2,
     company: "mxHero",
+    position: "Frontend Developer",
     dates: ["may. 2019", "jul. 2023"],
     features: [
       "Participated in the development of mxHERO's new client dashboard from scratch. First as a frontend developer and later on as a fullstack developer too. Including UX and UI's design (Material UI) and wireframing.",
@@ -14,7 +20,9 @@ const jobs = [
     ],
   },
   {
+    id: 3,
     company: "Navent",
+    position: "Frontend Developer",
     dates: ["nov. 2018", "abr. 2019"],
     features: [
       "Participated in the development of Navent's real state (Zonaprop) and job search (ZonaJobs) branches as a Frontend Developer.",
@@ -23,7 +31,9 @@ const jobs = [
     ],
   },
   {
+    id: 4,
     company: "mxHero",
+    position: "Frontend Developer",
     dates: ["abr. 2012", "oct. 2018"],
     features: [
       "Lead conceptualization, design and development of mxHero Mail2Cloud administration panel, as a frontend developer and web designer. Designed UI for different mxHero applications (web, chrome extension and Outlook plugin).",
@@ -33,4 +43,8 @@ const jobs = [
   },
 ];
 
-export default jobs;
+export default async function getJobs(): Promise<Job[]> {
+  // Simulate a 2-second delay
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return jobs;
+}

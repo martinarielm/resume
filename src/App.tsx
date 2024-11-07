@@ -1,21 +1,40 @@
+import { useEffect, useState } from "react";
 import { Avatar, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import getJobs from "./api";
+import { Job } from "./types/Job";
+import JobItem from "./components/JobItem";
 
 function App() {
+  const [jobs, setJobs] = useState<Job[]>([]);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const response = await getJobs();
+      setJobs(response);
+    };
+
+    fetchJobs();
+  });
+
   return (
     <Container
       maxWidth="lg"
-      sx={{ py: 7, backgroundColor: "white", boxShadow, height: "100vh" }}
+      sx={{
+        py: { xs: 5, sm: 6, md: 8, lg: 9 },
+        backgroundColor: "white",
+        boxShadow,
+      }}
     >
       <Grid
         container
-        rowSpacing={{ xs: 5, md: 7 }}
-        columnSpacing={{ xs: 5, md: 7 }}
-        sx={{ px: { sx: 2, md: 5 } }}
+        rowSpacing={{ xs: 5 }}
+        columnSpacing={{ xs: 3, sm: 5, md: 7 }}
+        sx={{ px: { xs: 0, sm: 1, md: 2, lg: 4 } }}
       >
         <Grid
-          size={{ xs: 4, md: 3 }}
-          sx={{ justifyItems: "center", p: { xs: 2, md: 3 } }}
+          size={{ xs: 4 }}
+          sx={{ justifyItems: "center", px: { xs: 1, sm: 2, md: 6 } }}
         >
           <Avatar
             alt="Martín Mármol"
@@ -27,11 +46,13 @@ function App() {
           />
         </Grid>
 
-        <Grid
-          size={{ xs: 8, md: 9 }}
-          sx={{ textAlign: "left", alignSelf: "center" }}
-        >
-          <Typography variant="h3" fontWeight={400} color="primary">
+        <Grid size={{ xs: 8 }} sx={{ textAlign: "left", alignSelf: "center" }}>
+          <Typography
+            variant="h3"
+            fontWeight={400}
+            color="primary"
+            fontSize={{ xs: 36, sm: 46, md: 50, lg: 60 }}
+          >
             Martín Mármol
           </Typography>
 
@@ -40,43 +61,40 @@ function App() {
           </Typography>
         </Grid>
 
-        <Grid size={{ xs: 4, md: 3 }}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <Typography
-            letterSpacing={2}
+            letterSpacing={1}
             variant="subtitle1"
             fontWeight={500}
+            fontSize={18}
             gutterBottom
           >
             SUMMARY
           </Typography>
+
+          <Typography variant="body2">
+            Created meaningful user experiences for products across various
+            industries. Using research, new technologies and user experience
+            design, I enjoy building brands and products into apps. My deepest
+            expertise is in front end web development, currently delving into
+            fullstack skills.
+          </Typography>
         </Grid>
 
-        <Grid size={{ xs: 8, md: 9 }}>
+        <Grid size={{ xs: 12, sm: 8 }}>
           <Typography
-            letterSpacing={2}
+            letterSpacing={1}
             variant="subtitle1"
             fontWeight={500}
+            fontSize={18}
             gutterBottom
           >
             WORK EXPERIENCE
           </Typography>
 
-          <Typography variant="subtitle2">MXHERO</Typography>
-          <Typography variant="body2">
-            - Participated in the development of mxHERO's new client dashboard
-            from scratch. First as a frontend developer and later on as a
-            fullstack developer too. Including UX and UI's design (Material UI)
-            and wireframing.
-          </Typography>
-          <Typography variant="body2">
-            - Programming languages used: Javascript and Typescript. NodeJS for
-            server environment. ReactJS for building the user interface and its
-            components. Unit tests with Jest. Git for version control. i18next
-            framework for localization.
-          </Typography>
-          <Typography variant="body2">
-            - 15 days scrum working framework.
-          </Typography>
+          {jobs.map((job) => (
+            <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
+          ))}
         </Grid>
       </Grid>
     </Container>
