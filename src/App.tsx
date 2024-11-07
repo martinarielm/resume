@@ -49,13 +49,6 @@ function App() {
           >
             SUMMARY
           </Typography>
-
-          <Typography variant="body2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Typography>
         </Grid>
 
         <Grid size={{ xs: 8, md: 9 }}>
@@ -68,11 +61,21 @@ function App() {
             WORK EXPERIENCE
           </Typography>
 
+          <Typography variant="subtitle2">MXHERO</Typography>
           <Typography variant="body2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            - Participated in the development of mxHERO's new client dashboard
+            from scratch. First as a frontend developer and later on as a
+            fullstack developer too. Including UX and UI's design (Material UI)
+            and wireframing.
+          </Typography>
+          <Typography variant="body2">
+            - Programming languages used: Javascript and Typescript. NodeJS for
+            server environment. ReactJS for building the user interface and its
+            components. Unit tests with Jest. Git for version control. i18next
+            framework for localization.
+          </Typography>
+          <Typography variant="body2">
+            - 15 days scrum working framework.
           </Typography>
         </Grid>
       </Grid>
