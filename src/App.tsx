@@ -104,7 +104,18 @@ function App() {
           </Typography>
           <Typography fontSize={12}>2005 - 2010</Typography>
 
-          <Stack spacing={1} sx={{ mt: 3 }}>
+          <Typography
+            letterSpacing={0.5}
+            variant="subtitle2"
+            fontWeight={500}
+            mt={{ xs: 3, md: 4 }}
+            mb={1}
+            gutterBottom
+          >
+            CONTACT INFO
+          </Typography>
+
+          <Stack spacing={1}>
             <Box>
               <RoomIcon
                 color="secondary"
