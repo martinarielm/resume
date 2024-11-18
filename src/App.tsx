@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
-import { Avatar, Container, Typography } from "@mui/material";
+import { Avatar, Box, Container, Link, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import getJobs from "./api";
+import EmailIcon from "@mui/icons-material/EmailOutlined";
+import RoomIcon from "@mui/icons-material/RoomOutlined";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import getJobs, { mockedJobs } from "./api";
 import { Job } from "./types/Job";
-import JobItem from "./components/JobItem";
+import JobItem, { JobItemSkeleton } from "./components/JobItem";
 
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchJobs = async () => {
+      setLoading(true);
       const response = await getJobs();
       setJobs(response);
+      setLoading(false);
     };
 
     fetchJobs();
-  });
+  }, []);
 
   return (
     <Container
@@ -34,7 +40,7 @@ function App() {
       >
         <Grid
           size={{ xs: 4 }}
-          sx={{ justifyItems: "center", px: { xs: 1, sm: 2, md: 6 } }}
+          sx={{ justifyItems: "center", px: { xs: 2, sm: 3, md: 8 } }}
         >
           <Avatar
             alt="Martín Mármol"
@@ -72,13 +78,68 @@ function App() {
             SUMMARY
           </Typography>
 
-          <Typography variant="body2">
+          <Typography variant="body2" mb={{ xs: 3, md: 4 }}>
             Created meaningful user experiences for products across various
             industries. Using research, new technologies and user experience
             design, I enjoy building brands and products into apps. My deepest
             expertise is in front end web development, currently delving into
             fullstack skills.
           </Typography>
+
+          <Typography
+            letterSpacing={1}
+            variant="subtitle1"
+            fontWeight={500}
+            fontSize={18}
+            gutterBottom
+          >
+            EDUCATION
+          </Typography>
+
+          <Typography variant="subtitle1" fontWeight={500}>
+            Diseñador de Imagen y Sonido
+          </Typography>
+          <Typography variant="body2">
+            Universidad de Palermo (college)
+          </Typography>
+          <Typography fontSize={12}>2005 - 2010</Typography>
+
+          <Stack spacing={1} sx={{ mt: 3 }}>
+            <Box>
+              <RoomIcon
+                color="secondary"
+                sx={{ mr: 1.5, verticalAlign: "bottom" }}
+              />
+              <Typography variant="body2" display="inline-block">
+                Buenos Aires, Argentina
+              </Typography>
+            </Box>
+
+            <Box>
+              <EmailIcon
+                color="secondary"
+                sx={{ mr: 1.5, verticalAlign: "bottom" }}
+              />
+              <Typography variant="body2" display="inline-block">
+                martinmarmol.ar@gmail.com
+              </Typography>
+            </Box>
+
+            <Box>
+              <LinkedInIcon
+                color="secondary"
+                sx={{ mr: 1.5, verticalAlign: "bottom" }}
+              />
+              <Link
+                href="https://www.linkedin.com/in/martinarielm/"
+                target="_blank"
+              >
+                <Typography variant="body2" display="inline">
+                  martinarielm
+                </Typography>
+              </Link>
+            </Box>
+          </Stack>
         </Grid>
 
         <Grid size={{ xs: 12, sm: 8 }}>
@@ -92,9 +153,11 @@ function App() {
             WORK EXPERIENCE
           </Typography>
 
-          {jobs.map((job) => (
-            <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
-          ))}
+          {loading
+            ? mockedJobs.map(() => <JobItemSkeleton mb={{ xs: 3, md: 4 }} />)
+            : jobs.map((job) => (
+                <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
+              ))}
         </Grid>
       </Grid>
     </Container>

@@ -4,4 +4,5 @@ export type Job = {
   position: string;
   dates: [string, string];
   features: string[];
+  skills: string[];
 };

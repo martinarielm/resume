@@ -1,4 +1,12 @@
-import { Box, BoxProps, Typography } from "@mui/material";
+import {
+  Box,
+  BoxProps,
+  Chip,
+  Skeleton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import IntegrationInstructionsOutlinedIcon from "@mui/icons-material/IntegrationInstructionsOutlined";
 import { Job } from "../types/Job";
 
 interface Props extends BoxProps {
@@ -6,13 +14,13 @@ interface Props extends BoxProps {
 }
 
 export default function JobItem({
-  job: { company, position, dates, features },
+  job: { company, position, dates, features, skills },
   ...boxProps
 }: Props) {
   return (
     <Box {...boxProps}>
       <Typography variant="subtitle1" fontWeight={500}>
-        {company} | {position}
+        {company} <span style={{ color: "#7899D9" }}>|</span> {position}
       </Typography>
 
       <Typography
@@ -25,6 +33,47 @@ export default function JobItem({
           {feature}
         </Typography>
       ))}
+
+      <Stack direction="row" spacing={1} sx={{ mt: 1.5, alignItems: "center" }}>
+        <IntegrationInstructionsOutlinedIcon
+          fontSize="small"
+          color="secondary"
+        />
+        {skills.map((skill) => (
+          <Chip key={skill} label={skill} size="small" sx={{ fontSize: 11 }} />
+        ))}
+      </Stack>
+    </Box>
+  );
+}
+
+export function JobItemSkeleton({ ...boxProps }: BoxProps) {
+  return (
+    <Box {...boxProps}>
+      <Skeleton>
+        <Typography variant="subtitle1" fontWeight={500}>
+          PlatformX Solutions | Frontend Developer
+        </Typography>
+      </Skeleton>
+
+      <Skeleton sx={{ mb: 1.5 }}>
+        <Typography fontSize={12}>may. 2019 - jul. 2023</Typography>
+      </Skeleton>
+
+      <Skeleton variant="rounded" sx={{ mb: 1.5 }}>
+        <Typography variant="body2" gutterBottom>
+          Lead conceptualization, design and development of mxHero Mail2Cloud
+          administration panel, as a frontend developer and web designer.
+          Designed UI for different mxHero applications (web, chrome extension
+          and Outlook plugin).
+        </Typography>
+      </Skeleton>
+      <Skeleton variant="rounded">
+        <Typography variant="body2" gutterBottom>
+          Lead conceptualization, design and development of mxHero Mail2Cloud
+          administration panel, as a frontend developer and web designer.
+        </Typography>
+      </Skeleton>
     </Box>
   );
 }

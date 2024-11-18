@@ -1,12 +1,21 @@
 import { Job } from "./types/Job";
 
-const jobs: Job[] = [
+export const mockedJobs: Job[] = [
   {
     id: 1,
     company: "PlatformX Solutions",
     position: "Frontend Developer",
     dates: ["nov. 2023", "actualidad"],
     features: [],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Redux",
+      "React Query",
+      "Storybook",
+      "Material UI",
+    ],
   },
   {
     id: 2,
@@ -15,8 +24,16 @@ const jobs: Job[] = [
     dates: ["may. 2019", "jul. 2023"],
     features: [
       "Participated in the development of mxHERO's new client dashboard from scratch. First as a frontend developer and later on as a fullstack developer too. Including UX and UI's design (Material UI) and wireframing.",
-      "Programming languages used: Javascript and Typescript. NodeJS for server environment. ReactJS for building the user interface and its components. Unit tests with Jest. Git for version control. i18next framework for localization.",
+      "Programming languages used: JavaScript and Typescript. NodeJS for server environment. ReactJS for building the user interface and its components. Unit tests with Jest. Git for version control. i18next framework for localization.",
       "15 days scrum working framework.",
+    ],
+    skills: [
+      "React",
+      "TypeScript",
+      "Jest",
+      "Node.js",
+      "Styled Components",
+      "Material UI",
     ],
   },
   {
@@ -26,9 +43,10 @@ const jobs: Job[] = [
     dates: ["nov. 2018", "abr. 2019"],
     features: [
       "Participated in the development of Navent's real state (Zonaprop) and job search (ZonaJobs) branches as a Frontend Developer.",
-      "Programming languages used: Javascript. ReactJS for building the user interface and its components. Git for version control.",
+      "Programming languages used: JavaScript. ReactJS for building the user interface and its components. Git for version control.",
       "15 days scrum working framework.",
     ],
+    skills: ["React", "JavaScript", "HTML5", "CSS3", "BEM Methodology"],
   },
   {
     id: 4,
@@ -40,11 +58,12 @@ const jobs: Job[] = [
       "Programming languages used: JavaScript. NodeJS for server environment. Mithril (framework MVC) for building the user interface and its components. Git for version control. Extensive use of JavaScript (ES6), Mithril, HTML5, CSS3.",
       "15 days scrum working framework.",
     ],
+    skills: ["React", "JavaScript", "Mithril.js", "HTML5", "CSS3"],
   },
 ];
 
 export default async function getJobs(): Promise<Job[]> {
   // Simulate a 2-second delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  return jobs;
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return mockedJobs;
 }
