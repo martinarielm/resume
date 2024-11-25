@@ -5,7 +5,7 @@ export const mockedJobs: Job[] = [
     id: 1,
     company: "PlatformX Solutions",
     position: "Frontend Developer",
-    dates: ["nov. 2023", "actualidad"],
+    dates: ["nov. 2023", "actualidad", "1 year 1 month"],
     features: [],
     skills: [
       "React",
@@ -14,6 +14,7 @@ export const mockedJobs: Job[] = [
       "Redux",
       "React Query",
       "Storybook",
+      "Figma",
       "Material UI",
     ],
   },
@@ -21,11 +22,12 @@ export const mockedJobs: Job[] = [
     id: 2,
     company: "mxHero",
     position: "Frontend Developer",
-    dates: ["may. 2019", "jul. 2023"],
+    dates: ["may. 2019", "jul. 2023", "4 years 3 months"],
     features: [
-      "Participated in the development of mxHERO's new client dashboard from scratch. First as a frontend developer and later on as a fullstack developer too. Including UX and UI's design (Material UI) and wireframing.",
-      "Programming languages used: JavaScript and Typescript. NodeJS for server environment. ReactJS for building the user interface and its components. Unit tests with Jest. Git for version control. i18next framework for localization.",
-      "15 days scrum working framework.",
+      "Co-designed and rebuilt mxHERO's client dashboard from scratch using ReactJS, contributing to critical decisions on technologies, methodologies, and UX/UI (Material UI, wireframing).",
+      "Implemented key features and components in JavaScript/TypeScript, ensuring performance, scalability, and localization support with i18next.",
+      "Expanded role to Fullstack Developer, creating server-side functionality with Node.js and maintaining code quality through unit testing with Jest and version control with Git.",
+      "Collaborated within a Scrum framework (15-day sprints) to deliver consistent and high-quality updates aligned with business goals.",
     ],
     skills: [
       "React",
@@ -40,7 +42,7 @@ export const mockedJobs: Job[] = [
     id: 3,
     company: "Navent",
     position: "Frontend Developer",
-    dates: ["nov. 2018", "abr. 2019"],
+    dates: ["nov. 2018", "abr. 2019", "6 months"],
     features: [
       "Participated in the development of Navent's real state (Zonaprop) and job search (ZonaJobs) branches as a Frontend Developer.",
       "Programming languages used: JavaScript. ReactJS for building the user interface and its components. Git for version control.",
@@ -52,7 +54,7 @@ export const mockedJobs: Job[] = [
     id: 4,
     company: "mxHero",
     position: "Frontend Developer",
-    dates: ["abr. 2012", "oct. 2018"],
+    dates: ["abr. 2012", "oct. 2018", "6 years 7 months"],
     features: [
       "Lead conceptualization, design and development of mxHero Mail2Cloud administration panel, as a frontend developer and web designer. Designed UI for different mxHero applications (web, chrome extension and Outlook plugin).",
       "Programming languages used: JavaScript. NodeJS for server environment. Mithril (framework MVC) for building the user interface and its components. Git for version control. Extensive use of JavaScript (ES6), Mithril, HTML5, CSS3.",

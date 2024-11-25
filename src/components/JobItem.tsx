@@ -28,13 +28,22 @@ export default function JobItem({
         sx={{ mb: 1.5 }}
       >{`${dates[0]} - ${dates[1]}`}</Typography>
 
-      {features.map((feature, id) => (
-        <Typography key={id} variant="body2" gutterBottom>
-          {feature}
-        </Typography>
-      ))}
+      <ul style={{ padding: "0 0 0 16px", margin: 0 }}>
+        {features.map((feature, id) => (
+          <li key={id}>
+            <Typography variant="body2" gutterBottom>
+              {feature}
+            </Typography>
+          </li>
+        ))}
+      </ul>
 
-      <Stack direction="row" spacing={1} sx={{ mt: 1.5, alignItems: "center" }}>
+      <Stack
+        direction="row"
+        useFlexGap
+        spacing={1}
+        sx={{ mt: 1.5, alignItems: "center", flexWrap: "wrap" }}
+      >
         <IntegrationInstructionsOutlinedIcon
           fontSize="small"
           color="secondary"
