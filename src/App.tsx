@@ -79,11 +79,12 @@ function App() {
           </Typography>
 
           <Typography variant="body2" mb={{ xs: 3, md: 4 }}>
-            Created meaningful user experiences for products across various
-            industries. Using research, new technologies and user experience
-            design, I enjoy building brands and products into apps. My deepest
-            expertise is in front end web development, currently delving into
-            fullstack skills.
+            With 11 years of experience in frontend development, I bring a
+            strong foundation in industry-standard coding practices and a
+            commitment to creating maintainable, high-quality projects. My
+            proactive approach includes mentoring junior developers and
+            fostering collaboration, ensuring both team growth and project
+            success.
           </Typography>
 
           <Typography
