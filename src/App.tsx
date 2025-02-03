@@ -176,6 +176,11 @@ function App() {
   );
 }
 
-const boxShadow = { boxShadow: "rgba(149, 157, 165, 0.3) 0px 0px 50px" };
+const boxShadow = {
+  boxShadow: "rgba(149, 157, 165, 0.3) 0px 0px 50px",
+  "@media print": {
+    boxShadow: "none",
+  },
+};
 
 export default App;
