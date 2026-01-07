@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Avatar, Box, Container, Link, Stack, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import EmailIcon from "@mui/icons-material/EmailOutlined";
 import RoomIcon from "@mui/icons-material/RoomOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
