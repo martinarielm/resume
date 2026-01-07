@@ -11,13 +11,22 @@ import JobItem, { JobItemSkeleton } from "./components/JobItem";
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message))
+      .catch(console.error);
+
     const fetchJobs = async () => {
       setLoading(true);
-      const response = await getJobs();
-      setJobs(response);
-      setLoading(false);
+      try {
+        const response = await getJobs();
+        setJobs(response);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchJobs();
@@ -166,7 +175,9 @@ function App() {
           </Typography>
 
           {loading
-            ? mockedJobs.map(() => <JobItemSkeleton mb={{ xs: 3, md: 4 }} />)
+            ? mockedJobs.map((job) => (
+                <JobItemSkeleton key={job.id} mb={{ xs: 3, md: 4 }} />
+              ))
             : jobs.map((job) => (
                 <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
               ))}

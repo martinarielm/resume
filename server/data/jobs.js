@@ -1,6 +1,4 @@
-import { Job } from "./types/Job";
-
-export const mockedJobs: Job[] = [
+const mockedJobs = [
   {
     id: 1,
     company: "PlatformX Solutions",
@@ -71,11 +69,4 @@ export const mockedJobs: Job[] = [
   },
 ];
 
-export default async function getJobs(): Promise<Job[]> {
-  const res = await fetch("http://localhost:5000/api/jobs");
-  if (!res.ok) {
-    throw new Error(`Failed to fetch jobs: ${res.status} ${res.statusText}`);
-  }
-  const data = (await res.json()) as Job[];
-  return data;
-}
+export default mockedJobs;
