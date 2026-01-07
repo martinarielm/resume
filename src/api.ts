@@ -72,10 +72,18 @@ export const mockedJobs: Job[] = [
 ];
 
 export default async function getJobs(): Promise<Job[]> {
-  const res = await fetch("http://localhost:5000/api/jobs");
-  if (!res.ok) {
+  const base = import.meta.env.VITE_API_URL ?? "http://localhost:5000";
+  const query = `query { jobs { id company position dates features skills } }`;
+
+  const res = await fetch(`${base}/graphql`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+
+  if (!res.ok)
     throw new Error(`Failed to fetch jobs: ${res.status} ${res.statusText}`);
-  }
-  const data = (await res.json()) as Job[];
-  return data;
+  const payload = await res.json();
+  if (payload.errors) throw new Error(payload.errors[0].message);
+  return payload.data.jobs as Job[];
 }

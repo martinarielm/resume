@@ -1,22 +1,37 @@
-import express from "express";
-import cors from "cors";
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 import mockedJobs from "./data/jobs.js";
 
-const app = express();
-const PORT = 5000;
+const typeDefs = `#graphql
+  type Job {
+    id: Int
+    company: String
+    position: String
+    dates: [String]
+    features: [String]
+    skills: [String]
+  }
 
-app.use(cors());
+  type Query {
+    jobs: [Job]
+    health: String
+  }
+`;
 
-app.use(express.json());
+const resolvers = {
+  Query: {
+    jobs: () => mockedJobs,
+    health: () => "ok",
+  },
+};
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from Express backend!" });
-});
+async function start() {
+  const server = new ApolloServer({ typeDefs, resolvers });
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 5000 },
+  });
+  // eslint-disable-next-line no-console
+  console.log(`GraphQL server running at ${url}`);
+}
 
-app.get("/api/jobs", async (req, res) => {
-  // Simulate a delay
-  await new Promise((r) => setTimeout(r, 500));
-  res.json(mockedJobs);
-});
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+start();
