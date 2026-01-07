@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
-import { Avatar, Box, Container, Link, Stack, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
 import EmailIcon from "@mui/icons-material/EmailOutlined";
 import RoomIcon from "@mui/icons-material/RoomOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -11,14 +18,8 @@ import JobItem, { JobItemSkeleton } from "./components/JobItem";
 function App() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch(console.error);
-
     const fetchJobs = async () => {
       setLoading(true);
       try {
