@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  Avatar,
-  Box,
-  Container,
-  Grid,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Container, Link, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import EmailIcon from "@mui/icons-material/EmailOutlined";
 import RoomIcon from "@mui/icons-material/RoomOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -22,12 +15,9 @@ function App() {
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
-      try {
-        const response = await getJobs();
-        setJobs(response);
-      } finally {
-        setLoading(false);
-      }
+      const response = await getJobs();
+      setJobs(response);
+      setLoading(false);
     };
 
     fetchJobs();
@@ -176,9 +166,7 @@ function App() {
           </Typography>
 
           {loading
-            ? mockedJobs.map((job) => (
-                <JobItemSkeleton key={job.id} mb={{ xs: 3, md: 4 }} />
-              ))
+            ? mockedJobs.map(() => <JobItemSkeleton mb={{ xs: 3, md: 4 }} />)
             : jobs.map((job) => (
                 <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
               ))}
