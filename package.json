@@ -2,7 +2,7 @@
   "name": "martin-marmol_cv",
   "homepage": "https://martinarielm.github.io/resume/",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev:client": "vite",
