@@ -34,5 +34,9 @@
     "typescript": "latest",
     "typescript-eslint": "^8.11.0",
     "vite": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinarielm/resume.git"
   }
 }
