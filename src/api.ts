@@ -44,7 +44,6 @@ export const mockedJobs: Job[] = [
     ],
   },
   {
-    // TODO: Desarrollar en detalle las features
     id: 3,
     company: "Navent",
     position: "Frontend Developer",

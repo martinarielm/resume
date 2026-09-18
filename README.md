@@ -8,16 +8,20 @@ A responsive personal resume website built with React and TypeScript, presenting
 
 - **React** — Component-based user interface.
 - **TypeScript** — Typed components and work experience data.
-- **Material UI & Material Icons** — Responsive layout, themed components, icons, and loading skeletons.
+- **Material UI & Material Icons** — UI components, icons, and a shared theme.
 - **Emotion** — Styling engine used by Material UI.
-- **Fontsource / Rubik** — Locally bundled font files.
 - **Vite** — Local development server and production builds.
 - **ESLint** — Static code analysis.
 - **GitHub Pages** — Static hosting, with deployment through `gh-pages`.
 
-## Project scope
+## Features
 
-Resume content is maintained directly in the repository. A mock data layer simulates asynchronous loading with a one-second delay, while React manages loading state and displays skeleton placeholders. The application runs entirely in the browser, without a backend server or database.
+- Responsive layout with stacked sections on mobile and two columns on wider screens, plus adaptive spacing.
+- Reusable, typed experience components and wrapping skill tags.
+- Simulated asynchronous data loading with skeleton placeholders.
+- Open Graph metadata for link previews.
+
+Resume content lives in the repository; the application runs in the browser without a backend or database.
 
 ## Local development
 

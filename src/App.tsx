@@ -81,10 +81,11 @@ function App() {
           <Typography variant="body2" mb={{ xs: 3, md: 4 }}>
             Frontend developer with over a decade of professional experience
             building web applications with React, TypeScript, and JavaScript.
-            Experienced in reusable UI components, API integration, and mentoring
-            developers, with additional backend experience using Node.js. Uses
-            AI-assisted coding tools in development workflows and is expanding
-            expertise in agentic development with OpenAI Codex. Fluent in English.
+            Experienced in reusable UI components, API integration, and
+            mentoring developers, with additional backend experience using
+            Node.js. Uses AI-assisted coding tools in development workflows and
+            is expanding expertise in agentic development with OpenAI Codex.
+            Fluent in English.
           </Typography>
 
           <Typography
@@ -197,7 +198,9 @@ function App() {
           </Typography>
 
           {loading
-            ? mockedJobs.map(() => <JobItemSkeleton mb={{ xs: 3, md: 4 }} />)
+            ? mockedJobs.map((job) => (
+                <JobItemSkeleton key={job.id} mb={{ xs: 3, md: 4 }} />
+              ))
             : jobs.map((job) => (
                 <JobItem key={job.id} job={job} mb={{ xs: 3, md: 4 }} />
               ))}
