@@ -5,7 +5,7 @@ export const mockedJobs: Job[] = [
     id: 1,
     company: "PlatformX Solutions",
     position: "Frontend Developer",
-    dates: ["nov. 2023", "actualidad", "1 year 1 month"],
+    dates: ["nov. 2023", "ene. 2026", "2 years 3 months"],
     features: [
       "Led frontend development for a fines payment platform, designing high-fidelity wireframes in Figma and implemented pixel perfect scalable interfaces for both citizens and admin users using JavaScript/TypeScript.",
       "Established and enforced coding best practices (Husky commit rules, Prettier, ESLint) to ensure maintainable, high-quality code, mentoring junior developers to improve their skills.",
@@ -31,7 +31,7 @@ export const mockedJobs: Job[] = [
     features: [
       "Co-designed and rebuilt mxHERO's client dashboard from scratch using ReactJS, contributing to critical decisions on technologies, methodologies, and UX/UI (Material UI, wireframing).",
       "Implemented key features and components in JavaScript/TypeScript, ensuring performance, scalability, and localization support with i18next.",
-      "Expanded role to Fullstack Developer, creating server-side functionality with Node.js and maintaining code quality through unit testing with Jest and version control with Git.",
+      "Contributed to backend functionality using Node.js alongside frontend development, maintaining code quality through unit testing with Jest.",
       "Collaborated within a Scrum framework (15-day sprints) to deliver consistent and high-quality updates aligned with business goals.",
     ],
     skills: [

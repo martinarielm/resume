@@ -63,7 +63,7 @@ function App() {
           </Typography>
 
           <Typography variant="subtitle2" fontWeight={400} sx={{ ml: 0.5 }}>
-            Frontend Developer
+            Senior Frontend Developer | React &amp; TypeScript
           </Typography>
         </Grid>
 
@@ -79,13 +79,40 @@ function App() {
           </Typography>
 
           <Typography variant="body2" mb={{ xs: 3, md: 4 }}>
-            With 11 years of experience in frontend development, I bring a
-            strong foundation in industry-standard coding practices and a
-            commitment to creating maintainable, high-quality projects. My
-            proactive approach includes mentoring junior developers and
-            fostering collaboration, ensuring both team growth and project
-            success.
+            Frontend developer with over a decade of professional experience
+            building web applications with React, TypeScript, and JavaScript.
+            Experienced in reusable UI components, API integration, and mentoring
+            developers, with additional backend experience using Node.js. Uses
+            AI-assisted coding tools in development workflows and is expanding
+            expertise in agentic development with OpenAI Codex. Fluent in English.
           </Typography>
+
+          <Typography
+            letterSpacing={1}
+            variant="subtitle1"
+            fontWeight={500}
+            fontSize={18}
+            gutterBottom
+          >
+            TECHNICAL SKILLS
+          </Typography>
+
+          <Stack spacing={1} mb={{ xs: 3, md: 4 }}>
+            <Typography variant="body2">
+              <strong>Frontend:</strong> JavaScript, TypeScript, React, Next.js,
+              HTML, CSS, Redux, React Query, Material UI
+            </Typography>
+            <Typography variant="body2">
+              <strong>Backend:</strong> Node.js
+            </Typography>
+            <Typography variant="body2">
+              <strong>Testing &amp; Tools:</strong> Jest, Storybook, Git, Figma
+            </Typography>
+            <Typography variant="body2">
+              <strong>AI-assisted Development:</strong> AI coding assistants,
+              OpenAI Codex, agentic workflows
+            </Typography>
+          </Stack>
 
           <Typography
             letterSpacing={1}
@@ -152,6 +179,10 @@ function App() {
               </Link>
             </Box>
           </Stack>
+          <Typography variant="body2" mt={2}>
+            <strong>Languages:</strong> Spanish — Native · English — Advanced,
+            fluent professional communication
+          </Typography>
         </Grid>
 
         <Grid size={{ xs: 12, sm: 8 }}>
