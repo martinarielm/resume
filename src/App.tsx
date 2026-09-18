@@ -110,7 +110,7 @@ function App() {
               <strong>Testing &amp; Tools:</strong> Jest, Storybook, Git, Figma
             </Typography>
             <Typography variant="body2">
-              <strong>AI-assisted Development:</strong> AI coding assistants,
+              <strong>AI-assisted Development:</strong> Coding assistants,
               OpenAI Codex, agentic workflows
             </Typography>
           </Stack>
@@ -180,9 +180,20 @@ function App() {
               </Link>
             </Box>
           </Stack>
-          <Typography variant="body2" mt={2}>
-            <strong>Languages:</strong> Spanish — Native · English — Advanced,
-            fluent professional communication
+
+          <Typography
+            letterSpacing={0.5}
+            variant="subtitle2"
+            fontWeight={500}
+            mt={{ xs: 3, md: 4 }}
+            gutterBottom
+          >
+            LANGUAGES
+          </Typography>
+
+          <Typography variant="body2">Spanish — Native</Typography>
+          <Typography variant="body2">
+            English — Advanced, fluent professional communication
           </Typography>
         </Grid>
 
