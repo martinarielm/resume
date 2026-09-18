@@ -26,11 +26,11 @@ export default function JobItem({
       <Typography
         fontSize={12}
         sx={{ mb: 1.5 }}
-      >{`${dates[0]} - ${dates[1]}`}</Typography>
+      >{`${dates[0]} - ${dates[1]} · ${dates[2]}`}</Typography>
 
       <ul style={{ padding: "0 0 0 16px", margin: 0 }}>
-        {features.map((feature, id) => (
-          <li key={id}>
+        {features.map((feature) => (
+          <li key={feature}>
             <Typography variant="body2" gutterBottom>
               {feature}
             </Typography>
@@ -66,7 +66,9 @@ export function JobItemSkeleton({ ...boxProps }: BoxProps) {
       </Skeleton>
 
       <Skeleton sx={{ mb: 1.5 }}>
-        <Typography fontSize={12}>may. 2019 - jul. 2023</Typography>
+        <Typography fontSize={12}>
+          may. 2019 - jul. 2023 · 4 years 3 months
+        </Typography>
       </Skeleton>
 
       <Skeleton variant="rounded" sx={{ mb: 1.5 }}>
