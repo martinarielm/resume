@@ -107,7 +107,8 @@ function App() {
               <strong>Backend:</strong> Node.js
             </Typography>
             <Typography variant="body2">
-              <strong>Testing &amp; Tools:</strong> Jest, Storybook, Git, Figma
+              <strong>Testing &amp; Tools:</strong> Jest, Storybook, Git, Figma,
+              Docker (basic knowledge)
             </Typography>
             <Typography variant="body2">
               <strong>AI-assisted Development:</strong> Coding assistants,
